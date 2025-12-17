@@ -1,5 +1,7 @@
 import { calculateInstallment } from "./parcelamento.js";
 import { productDetailPage } from '../components/productDetailPage.js';
+import { renderLoading } from '../components/renderLoading.js';
+
 
 async function renderProductDetail(productId) {
     const url = `https://fakestoreapi.com/products/${productId}`;
@@ -11,7 +13,8 @@ async function renderProductDetail(productId) {
         content.textContent = 'ID inválido';
         return;
     }
-
+    //loading
+    renderLoading(content, 'Carregando produto...');
     try {
         const response = await fetch(url);
         const product = await response.json();

@@ -2,239 +2,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
 
 * {
-    margin: 0;
-    box-sizing: border-box;
     font-family: 'Merriweather', serif;
 }
 
-body {
-    margin: 0;
-    background-color: rgb(109, 108, 108);
-}
-
-.navbar-brand {
-    color: white !important;
-    font-weight: 900;
-    font-family: 'Playfair Display', serif;
-}
-
-.nav-link {
-    color: white !important;
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-}
-
-.header {
-    width: 97%;
-    margin: 2rem auto;
-    overflow: hidden;
-    position: relative;
-    height: 200px;
-    text-align: center;
+.header-home {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 2rem;
 }
 
 .fundo-img-header {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: url("../img/conjunto-produtos.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    opacity: 0.8;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../img/img-fundo-header.png");
+  background-repeat: repeat-x;
+  background-position: center;
 }
 
 .conteudo-header {
-    position: relative;
-    z-index: 1;
-    margin-top: 2rem;
-    color: white;
-    text-shadow: 1px 1px 5px black;
-}
-
-.conteudo-header h1 {
-    font-weight: 900;
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
 .conteudo-header p {
-    background-color: #4169E1;
+    background-color: rgba(37, 99, 235, 0.9);
+    border-radius: 0.75rem;
     font-size: 20px;
     font-weight: 700;
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    border-radius: 5px;
-}
-
-.content-main {
-    justify-content: center;
-}
-
-.btn-categorie {
-    background-color: #4169E1 !important;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-    color: white !important;
-}
-.card-link {
-    text-decoration: none;
-}
-.section-total-card {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.card-product {
-    width: 300px;
-    
-    background-color: rgb(241, 237, 237);
-    box-shadow: 1px 1px 5px rgb(109, 108, 108);
-    margin: auto;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.card-product:hover {
-    box-shadow: 1px 1px 10px rgb(109, 108, 108);
-}
-
-.title-product {
-    height: 60px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #333;
-}
-
-.img-produtos {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
-}
-
-.preco {
-    font-size: 20px;
-    font-weight: 700;
-    color: #000;
-}
-
-.descricao {
-    height: 70px;
-    font-size: 16px;
-    color: #444;
-}
-
-.star-basic,
-.star-meia,
-.star-quase-total,
-.star-total,
-.star-inicio {
-    width: 20px;
-}
-
-.parcela {
-    margin-top: -1rem;
-    color: #00a650;
-}
-
-.avaliacao {
-
-    margin-bottom: 0;
-    font-size: 14px;
-    color: #555;
-}
-
-.dropdown-menu {
-    li:hover {
-        cursor: pointer;
-        background-color: #4169E1;
-        color: white;
-    }
-}
-
-
-/* Tela de detalhamento */
-.content-main-detail {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-.article-product-detail {
-    width: 90%;
-    display: flex;
-    padding: 20px;
-    border: 1px solid rgb(192, 190, 190);
-    border-radius: 6px;
-}
-.info-product {
-    padding: 10px;
-    border-left: 1px solid rgb(192, 190, 190);
-    border-right: 1px solid rgb(192, 190, 190);
-    
-}
-.product-image {
-    padding: 20px 20px 20px 0;
-}
-.product-image img {
-    width: 300px;
-}
-
-.descricao-detail {
-    font-size: 14px;
-}
-.preco-detail {
-    font-size: 20px;
-    font-weight: 600;
-}
-.parcela-detail {
-    font-size: 20px;
-    color: #00a650;
-}
-
-.grid-last-detail {
-    padding: 10px 0 10px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.text-estoque {
-    text-align: center;
-}
-.footer-last-detail {
-    justify-content: center;
-    display: flex;
-    align-items: flex-end;
-}
-
-/* Responsividade */
-@media screen and (max-width: 600px) {
-    .card-product {
-        width: 90%;
-        padding: 0.5rem;
-    }
-
-    .img-produtos {
-        width: 100px;
-        height: 100px;
-    }
-
-    .title-product {
-        font-size: 16px;
-    }
-
-    .preco,
-    .descricao {
-        font-size: 14px;
-    }
-
-    .conteudo-header h1 {
-        font-size: 22px;
-    }
-
-    .conteudo-header p {
-        font-size: 16px;
-    }
 }

@@ -6,7 +6,7 @@ import { handleCategorieClick } from "../main.js";
 async function categories() {
     const response = await fetch('https://fakestoreapi.com/products/categories');
     const categorie = await response.json();
-    list_Categories(categorie);
+    listCategories(categorie);
 }
 categories();
 
@@ -15,19 +15,25 @@ export function selectCategorie(e) {
     return categorie;
 }
 
-function list_Categories(categories) {
-    let ul = document.getElementById('dropdown-content');
+function listCategories(categories) {
+    const ul = document.getElementById('dropdown-content');
     ul.innerHTML = '';
-    let liDefault = document.createElement('li');
-    liDefault.textContent = 'Todas';
-    liDefault.addEventListener('click', handleCategorieClick);
-    ul.appendChild(liDefault);
-    
-    for (let categorie of categories) {
-        let li = document.createElement('li');
-        li.textContent = categorie;
+
+    function createItem(text) {
+        const li = document.createElement('li');
+        li.textContent = text;
+        li.className = `
+            px-4 py-2 text-sm text-gray-700
+            hover:bg-gray-100 cursor-pointer
+        `;
         li.addEventListener('click', handleCategorieClick);
-        ul.appendChild(li);
+        return li;
+    }
+
+    ul.appendChild(createItem('Todas'));
+
+    for (let categorie of categories) {
+        ul.appendChild(createItem(categorie));
     }
 
 }

@@ -1,27 +1,42 @@
 function MenuNavbar() {
-    const navbar = `
-     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #4169E1 !important;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">API Stores</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About</a>
-          </li>
-        </ul>
-        
+  const navbar = `
+  <nav class="bg-stone-200 ">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex h-16 items-center justify-between"">
+      <a href="home.html" class="text-stone-800 font-semibold text-lg mr-3">
+        API Stores
+      </a>
+    
+        <button id="menu-toggle"
+          class="md:hidden text-stone-800 focus:outline-none">
+          ☰
+        </button>
+
+        <ul id="menu"
+          class="hidden md:flex gap-6 text-stone-800 text-sm font-medium">
+          <li><a href="home.html" class="hover:bg-stone-400 p-2 rounded-xl">Home</a></li>
+          <li><a href="about.html" class="hover:bg-stone-400 p-2 rounded-xl">About</a></li>
+        </ul> 
+
       </div>
     </div>
-  </nav>`;
+
+    <ul id="menu-mobile"
+      class="hidden flex-col gap-4 px-4 pb-4 md:hidden text-stone-800">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  `;
 
   document.getElementById("navbar").innerHTML = navbar;
+
+  const toggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("menu-mobile");
+
+  toggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 }
 
-MenuNavbar()
+MenuNavbar();
